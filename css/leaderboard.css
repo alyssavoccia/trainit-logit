@@ -1,0 +1,89 @@
+/* ==========================
+LEADERBOARD PAGE
+=============================*/
+.leaderboard-screen {
+  text-align: center;
+}
+
+.leaderboard-header {
+  background-color: #DBE6EC;
+  padding-bottom: 1em;
+}
+
+.leaderboard-heading {
+  color: #3B444F;
+  font-weight: 400;
+  padding: 10px;
+}
+
+.leaderboard-tagline {
+  margin: 0;
+}
+
+.leaderboard-info {
+  margin-top: 2em;
+}
+
+button:focus {
+  outline: 0;
+}
+
+.global-leaderboard-btn,
+.friends-leaderboard-btn {
+  background-color: #99a9b3;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  margin-top: 10px;
+  padding: 10px;
+}
+
+.global-leaderboard-btn:hover,
+.friends-leaderboard-btn:hover {
+  background-color: #67747C;
+  cursor: pointer;
+}
+
+.active-leaderboard {
+  background-color: #67747C;
+}
+
+.leadboard-item {
+  margin-top: 1em;
+}
+
+.leaderboard-item__heading {
+  background-color: #288AD6;
+  color: #ECF0F1;
+  padding: 1em 0;
+}
+
+.leaderboard-item__heading h2 {
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+.no-leader {
+  font-weight: 700;
+}
+
+@media (min-width: 768px) {
+
+  .leaderboard-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 2em auto;
+    max-width: 1000px;
+  }
+
+  .leaderboard-info > div {
+    flex: 1 300px;
+  }
+
+  .leadboard-item {
+    margin: 2em 2em;
+  }
+  
+
+}

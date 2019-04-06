@@ -1,0 +1,72 @@
+/* ======================
+LOGIN PAGE
+=========================*/
+body {
+  overflow: hidden;
+}
+
+.container {
+  background-image: url('../images/bg.jpg');
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  overflow-y: hidden;
+  position: relative;
+}
+
+.login-screen {
+  width: 100%;
+  overflow: hidden;
+}
+
+.login-box {
+  background-color: rgba(236,240,241, .8);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 1em;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 10%;
+  text-align: center;
+  width: 80%;
+}
+
+.form-input {
+  border-radius: 5px;
+  border: none;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.login-btn {
+  background-color: #3498DB;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  padding: 1em;
+}
+
+.signup-btn {
+  background-color: #2C3E50;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  padding: 1em;
+}
+
+.login-btn:hover,
+.signup-btn:hover {
+  cursor: pointer;
+  opacity: .8;
+}
+
+@media (min-width: 768px) {
+
+  .login-box {
+    width: 500px;
+  }
+
+}

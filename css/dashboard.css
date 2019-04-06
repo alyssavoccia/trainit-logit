@@ -1,0 +1,197 @@
+/* ======================
+DASHBOARD PAGE
+=========================*/
+.dashboard-screen {
+  text-align: center;
+}
+
+.dashboard-header,
+.leaderboard-header {
+  background-color: #dbe6ec;
+  padding-bottom: 1em;
+}
+
+.dashboard-heading {
+  font-weight: 300;
+  margin: 0;
+  padding: 1em 1em 0 1em;
+}
+
+.total-workouts {
+  font-weight: 700;
+}
+
+.totals-header {
+  font-weight: 400;
+  padding-top: 10px;
+}
+
+.totals-list {
+  display: flex;
+  justify-content: center;
+}
+
+.totals-list__item {
+  padding: 0 10px;
+}
+
+.totals-emoji {
+  margin-bottom: 5px;
+}
+
+.totals-duration {
+  margin-top: 0;
+}
+
+.totals-emoji,
+.totals-duration {
+  font-size: 20px;
+}
+
+/* ADDING WORKOUTS */
+.add-workout {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 80%;
+}
+
+.select-workout,
+.workout-duration {
+  border-radius: 5px;
+  border: none;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.workout-duration {
+  display: none;
+}
+
+.add-workout-btn {
+  border: none;
+  border-radius: 5px;
+  background-color: #ECF0F1;
+  padding: 10px;
+  transition: .25s ease-in all;
+}
+
+.add-workout-btn:hover {
+  background-color: #3498DB;
+  color: #ECF0F1;
+  cursor: pointer;
+}
+
+/* SEARCH WORKOUTS */
+.no-match,
+.no-friends-matching {
+  display: none;
+}
+
+.workouts-info,
+.friends-info {
+  margin-top: 2em;
+}
+
+.search-workouts,
+.search-friends {
+  background: #ECF0F1;
+  border-radius: 5px;
+  border: none;
+  margin-bottom: 10px;
+  padding: 10px;
+  width: 95%;
+}
+
+.search-workouts:focus,
+.search-workouts:active,
+.search-friends:focus,
+.search-friends:active  {
+  outline: none;
+}
+
+/* WORKOUTS TABLE */
+.workouts-table,
+.friends-table {
+  margin-top: 1em;
+}
+
+.workouts-table__header,
+.friends-table__header {
+  background-color: #288ad6;
+  color: #ECF0F1;
+  padding: 10px;
+}
+
+.workouts-table__header h2,
+.friends-table__header h2 {
+  font-weight: 400;
+}
+
+.workouts-table__list,
+.friends-table__list {
+  border: 1px solid #ECF0F1;
+}
+
+.workout-list-item,
+.friend-list-item  {
+  border-bottom: 1px solid #ECF0F1;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1em;
+}
+
+.remove-workout-btn,
+.remove-friend-btn {
+  cursor: pointer;
+}
+
+.workout-list-info {
+  display: flex;
+}
+
+.workout-completed {
+  font-weight: 700;
+  margin-right: 10px;
+}
+
+@media (min-width: 768px) {
+
+  .totals-list__item {
+    padding: 0 1em;
+  }
+
+  .add-workout {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .select-workout,
+  .workout-duration {
+    margin: 0 10px;
+  }
+
+  .add-workout-btn {
+    margin: 0 10px;
+  }
+
+  .tables {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 900px;
+  }
+
+  .workouts-info {
+    flex: 3;
+  }
+
+  .workouts-info,
+  .friends-info {
+    margin: 1em 10px;
+  }
+
+  .search-friends {
+    width: 250px;
+  }
+}

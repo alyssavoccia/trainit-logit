@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>TrainItLogIt</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/login.css">
+    <!-- FONT -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+    <!-- FIREBASE -->
+    <script src="https://www.gstatic.com/firebasejs/5.8.5/firebase.js"></script>
+  </head>
+  <body>
+
+    <div class="header">
+      <h1 class="title">Train It Log It</h1>
+      <ul class="nav">
+        <li class="dashboard-link"><a href="index.html">Dashboard</a></li>
+        <li class="leaderboard-link"><a href="leaderboard.html">Leaderboard 🥇</a></li>
+        <li class="users-link">Users 👤</li>
+        <li class="logout-link" id="logoutBtn">Logout</li>
+      </ul>
+    </div>
+    
+    <!-- =====================
+      LOGIN SCREEN
+    =======================-->
+    <div class="container">
+      <div class="login-screen">
+        <div class="login-box">
+          <h2 class="login-title">Challenge yourself, Challenge your friends</h2>
+          <input class="form-input" type="text" name="user_email" id="user_email" placeholder="Email">
+          <input class="form-input" type="password" name="user_pass" id="user_pass" placeholder="Password">
+          <div class="login-buttons">
+            <button class="login-btn" id="loginBtn">Login</button>
+            <button class="signup-btn" id="signUpBtn">Sign Up</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="js/login.js"></script>
+  </body>
+</html>

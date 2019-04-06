@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>TrainItLogIt</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <!-- FONT -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+    <!-- FIREBASE -->
+    <script src="https://www.gstatic.com/firebasejs/5.8.5/firebase.js"></script>
+  </head>
+  <body>
+
+    <div class="header">
+      <h1 class="title">Train It Log It</h1>
+      <ul class="nav">
+        <li class="dashboard-link"><a href="dashboard.html">Dashboard</a></li>
+        <li class="leaderboard-link"><a href="leaderboard.html">Leaderboard 🥇</a></li>
+        <li class="users-link"><a href="users.html">Users 👤</a></li>
+        <li class="logout-link" id="logoutBtn">Logout</li>
+      </ul>
+    </div>
+    
+    <!-- =====================
+      DASHBOARD SCREEN
+    =======================-->
+    
+    <div class="dashboard-screen">
+      <div class="dashboard-header">
+        <h1 class="dashboard-heading">Viewing <strong class="total-workouts">0</strong> workout(s)</h1>
+        <h2 class="totals-header">Total Workout Durations</h2>
+        <div class="totals-list">
+          <div class="totals-list__item">
+            <p class="totals-emoji">🏃</p>    
+            <p class="totals-duration"><span class="running-total">0</span> miles</p>
+          </div>
+          <div class="totals-list__item">
+            <p class="totals-emoji">🚶‍</p>    
+            <p class="totals-duration"><span class="walking-total">0</span> miles</p>
+          </div>
+          <div class="totals-list__item">
+            <p class="totals-emoji">‍‍‍‍🚴‍</p>    
+            <p class="totals-duration"><span class="biking-total">0</span> miles</p>
+          </div>
+          <div class="totals-list__item">
+            <p class="totals-emoji">🏋️‍</p>    
+            <p class="totals-duration"><span class="lifting-total">0</span> minutes</p>
+          </div>
+        </div>
+        <div class="add-workout">
+          <select id="workout" class="select-workout" onchange="selectWorkout(event)">
+            <option  value="" selected disabled hidden>Select Workout</option>
+            <option value="Running">Running</option>
+            <option value="Walking">Walking</option>
+            <option value="Biking">Biking</option>
+            <option value="Lifting">Lifting</option>
+          </select>
+          <input class="workout-duration" type="number" placeholder="Distance (in miles)" id="duration" required>
+          <button class="add-workout-btn" id="addWorkoutBtn">Add Workout</button>
+        </div>
+        <p id="add-workout-message"></p>
+      </div>
+      <div class="tables">
+        <div class="workouts-info">
+          <input class="search-workouts" type="text" placeholder="Search Workouts">
+          <div class="workouts-table">
+            <div class="workouts-table__header">
+              <h2>Workouts</h2>
+            </div>
+            <div class="workouts-table__list">
+              <h3 class="no-workouts">No workouts logged</h3>
+              <h3 class="no-workouts no-match">No workouts matching search</h3>
+            </div>
+          </div>
+        </div>
+        <div class="friends-info">
+          <input class="search-friends" type="text" placeholder="Search Friends">
+          <div class="friends-table">
+            <div class="friends-table__header">
+              <h2>Friends</h2>
+            </div>
+            <div class="friends-table__list">
+              <h3 class="no-friends">No friends added</h3>
+              <h3 class="no-friends-matching">No friends matching search</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script src="js/dashboard.js"></script>
+  </body>
+</html>

@@ -1,0 +1,146 @@
+* {
+  text-align: center;
+}
+
+.users-header {
+  background-color: #DBE6EC;
+  padding-bottom: 1em;
+}
+
+.users-heading {
+  color: #3B444F;
+  font-weight: 400;
+  padding: 10px;
+}
+
+.users-tagline {
+  margin: 0;
+}
+
+button:focus {
+  outline: 0;
+}
+
+.all-users-btn,
+.friends-btn {
+  background-color: #99a9b3;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  margin-top: 10px;
+  padding: 10px;
+}
+
+.all-users-btn:hover,
+.friends-btn:hover {
+  background-color: #67747C;
+  cursor: pointer;
+}
+
+.active-users {
+  background-color: #67747C;
+}
+
+.search-users {
+  background: #ECF0F1;
+  border-radius: 5px;
+  border: none;
+  margin-top: 1em;
+  margin-bottom: 10px;
+  padding: 10px;
+  text-align: left;
+  width: 80%;
+}
+
+.search-users:focus,
+.search-users:active {
+  outline: none;
+}
+
+.wrapper {
+  margin: 0 auto;
+  width: 80%;
+}
+
+.inner-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+}
+
+.user-box {
+  background-color: #FFF;
+  border: 1px solid #DFDFDF;
+  border-radius: 5px;
+  margin: 5px auto;
+  min-width: 310px;
+  max-width: 350px;
+}
+
+.current-user {
+  background-color: #ECF0F1;
+}
+
+.add-friend-btn {
+  border: none;
+  border-radius: 5px;
+  margin-top: 5px;
+  padding: 5px;
+  transition: all .2s ease-in;
+}
+
+.add-friend-btn:hover {
+  background-color: #67747C;
+  color: white;
+  cursor: pointer;
+}
+
+.add-friend-btn:active,
+.add-friend-btn:focus {
+  outline: none;
+}
+
+.user-info {
+  display: flex;
+}
+
+.user-workouts {
+  display: flex;
+  justify-content: center;
+}
+
+.user-name {
+  color: #2c3643;
+  font-weight: 700;
+  margin-bottom: 0;
+}
+
+.user-workout {
+  margin: 0 5px;
+}
+
+.workout-emoji {
+  margin-bottom: 0;
+}
+
+.user-workout-total {
+  margin-top: 0;
+}
+
+@media (min-width: 768px) {
+
+  .wrapper {
+    max-width: 1100px;
+  }
+  
+  .search-users {
+    max-width: 500px;
+  }
+
+  .user-box {
+    margin: 1em;
+  }
+  
+}

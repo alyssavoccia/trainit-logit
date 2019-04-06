@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>TrainItLogIt</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/leaderboard.css">
+    <!-- FONT -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+    <!-- FIREBASE -->
+    <script src="https://www.gstatic.com/firebasejs/5.8.5/firebase.js"></script>
+  </head>
+  <body>
+
+    <div class="header">
+      <h1 class="title">Train It Log It</h1>
+      <ul class="nav">
+        <li class="dashboard-link"><a href="dashboard.html">Dashboard</a></li>
+        <li class="leaderboard-link"><a href="leaderboard.html">Leaderboard 🥇</a></li>
+        <li class="users-link"><a href="users.html">Users 👤</a></li>
+        <li class="logout-link" id="logoutBtn">Logout</li>
+      </ul>
+    </div>
+    
+    <!-- =====================
+      LEADERBOARD SCREEN
+    =======================-->
+
+    <div class="leaderboard-screen">
+      <div class="leaderboard-header">
+        <h1 class="leaderboard-heading">Leaderboard</h1>
+        <p class="leaderboard-tagline">How do you stack up against the competition?</p>
+        <button class="global-leaderboard-btn active-leaderboard">Global Leaderboard</button>
+        <button class="friends-leaderboard-btn">Friends Leaderboard</button>
+      </div>
+      <div class="leaderboard-info">
+        <div class="leadboard-item">
+          <div class="leaderboard-item__heading">
+            <h2>Running</h2>
+          </div>
+          <div class="leaderboard-item__list">
+            <p class="no-leader no-running-leader">No current leader</p>
+            <div class="leaderboard-list-item">
+              <p class="running-1"></p>
+            </div>
+            <div class="leaderboard-list-item">
+              <p class="running-2"></p>
+            </div>
+            <div class="leaderboard-list-item">
+              <p class="running-3"></p>
+            </div>
+            <div class="leaderboard-list-item">
+              <p class="running-4"></p>
+            </div>
+            <div class="leaderboard-list-item">
+              <p class="running-5"></p>
+            </div>
+          </div>
+        </div>
+        <div class="leadboard-item">
+          <div class="leaderboard-item__heading">
+            <h2>Walking</h2>
+          </div>
+          <div class="leaderboard-item__list">
+            <p class="no-leader no-walking-leader">No current leader</p>
+            <div class="leaderboard-list-item">
+              <p class="walking-1"></p>
+            </div>
+            <div class="leaderboard-list-item">
+              <p class="walking-2"></p>
+            </div>
+            <div class="leaderboard-list-item">
+              <p class="walking-3"></p>
+            </div>
+            <div class="leaderboard-list-item">
+              <p class="walking-4"></p>
+            </div>
+            <div class="leaderboard-list-item">
+              <p class="walking-5"></p>
+            </div>
+        </div>
+        </div>
+        <div class="leadboard-item">
+          <div class="leaderboard-item__heading">
+            <h2>Biking</h2>
+          </div>
+          <div class="leaderboard-item__list">
+            <p class="no-leader no-biking-leader">No current leader</p>
+            <div class="leaderboard-list-item">
+              <p class="biking-1"></p>
+            </div>
+            <div class="leaderboard-list-item">
+              <p class="biking-2"></p>
+            </div>
+            <div class="leaderboard-list-item">
+              <p class="biking-3"></p>
+            </div>
+            <div class="leaderboard-list-item">
+              <p class="biking-4"></p>
+            </div>
+            <div class="leaderboard-list-item">
+              <p class="biking-5"></p>
+            </div>
+          </div>
+        </div>
+        <div class="leadboard-item">
+          <div class="leaderboard-item__heading">
+            <h2>Lifting</h2>
+          </div>
+          <div class="leaderboard-item__list">
+            <p class="no-leader no-lifting-leader">No current leader</p>
+            <div class="leaderboard-list-item">
+              <p class="lifting-1"></p>
+            </div>
+            <div class="leaderboard-list-item">
+              <p class="lifting-2"></p>
+            </div>
+            <div class="leaderboard-list-item">
+              <p class="lifting-3"></p>
+            </div>
+            <div class="leaderboard-list-item">
+              <p class="lifting-4"></p>
+            </div>
+            <div class="leaderboard-list-item">
+              <p class="lifting-5"></p>
+            </div>
+          </div>
+        </div>
+ 
+      </div>
+    </div>
+  
+
+    <!-- JAVASCRIPT -->
+    <script src="js/leaderboard.js"></script>
+  </body>
+</html>

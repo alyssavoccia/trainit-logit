@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>TrainItLogIt</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/users.css">
+    <!-- FONT -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+    <!-- FIREBASE -->
+    <script src="https://www.gstatic.com/firebasejs/5.8.5/firebase.js"></script>
+  </head>
+  <body>
+
+    <div class="header">
+      <h1 class="title">Train It Log It</h1>
+      <ul class="nav">
+        <li class="dashboard-link"><a href="dashboard.html">Dashboard</a></li>
+        <li class="leaderboard-link"><a href="leaderboard.html">Leaderboard 🥇</a></li>
+        <li class="users-link"><a href="users.html">Users 👤</a></li>
+        <li class="logout-link" id="logoutBtn">Logout</li>
+      </ul>
+    </div>
+    
+    <!-- =====================
+      USERS SCREEN
+    =======================-->
+    <div class="users-header">
+      <h1 class="users-heading">Users</h1>
+      <p class="users-tagline">Check out what other users are doing</p>
+      <button class="all-users-btn active-users">All Users</button>
+      <button class="friends-btn">Friends</button>
+    </div>
+    <div class="wrapper">
+      <input type="text" id="search-input" class="search-users" placeholder="Search Users">
+      <div class="inner-wrapper"></div>
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script src="js/users.js"></script>
+  </body>
+</html>
