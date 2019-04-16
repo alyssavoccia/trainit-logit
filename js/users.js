@@ -305,17 +305,14 @@ function generateFriendsHTML() {
     userBox.className = 'user-box';
     userWorkoutsList.className = 'user-workouts';
     userBox.id = `${i}`;
-
-    // What happens is the user's friend doesn't have any workouts logged
+    // What happens if the user's friend doesn't have any workouts logged
     if (userTotals[i] == undefined) {
-      for (let i = 0; i < usersInDatabase.length; i++) {
-        if (usersWithWorkouts.indexOf(usersInDatabase[i]) == -1 && currentUsersFriends.indexOf(usersInDatabase[i]) > -1) {
-          userBox.innerHTML += 
-          `
-          <p class="user-name">${usersInDatabase[i]}</p>
-          <p class="no-workouts-logged">No workouts logged</p>
-          `;
-        }
+      if (usersWithWorkouts.indexOf(usersInDatabase[i]) == -1 && currentUsersFriends.indexOf(usersInDatabase[i]) > -1) {
+        userBox.innerHTML += 
+        `
+        <p class="user-name">${usersInDatabase[i]}</p>
+        <p class="no-workouts-logged">No workouts logged</p>
+        `;
       }
       
       // Checks to see if the users in the usersTotals array are in the current users friends array
@@ -423,8 +420,8 @@ function generateFriendButtons() {
   // Variable to hold whether or not the userFriends branch in the database is null
   userFriendsRef.on('value', (snapshot) => {
 
-    // Calls the function to add an event listener to add friend button
-    addFriendEventListener();
+    // // Calls the function to add an event listener to add friend button
+    // addFriendEventListener();
 
     if (snapshot.val() == null) {
      
@@ -442,6 +439,8 @@ function generateFriendButtons() {
           usersArray[i].childNodes[3].appendChild(addFriendBtnEl);
         }
       }
+      // Calls the function to add an event listener to add friend button
+      addFriendEventListener();
       // WHAT HAPPENS IF THERE IS A USERFRIENDS BRANCH IN THE DATABASE
     } else {
 
@@ -481,8 +480,12 @@ function generateFriendButtons() {
         // Adds the add friend button to all users, except the current user and their friends
         if (currentUser != usernamesInDB && currentUsersFriends.indexOf(usersArray[i].childNodes[1].innerHTML) <= -1 && usersArray[i].childNodes[3].innerHTML == '') {
           usersArray[i].childNodes[3].appendChild(addFriendBtnEl);
+          // Calls the function to add an event listener to add friend button
+          addFriendEventListener();
         }
       }
+
+      
     }
   });
   
@@ -502,7 +505,7 @@ function highlightCurrentUser() {
 // EVENT LISTENER FOR ADD FRIEND BUTTON
 //////////////////////////////////////////////
 function addFriendEventListener() {
-  const addFriendBtns = document.querySelectorAll('.add-friend-btn');
+  const addFriendBtns = Array.prototype.slice.call(document.querySelectorAll('.add-friend-btn'));
   // Event listener for when an add friend button is clicked
   addFriendBtns.forEach((el) => {
     el.addEventListener('click', (e) => {
