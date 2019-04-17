@@ -30,7 +30,7 @@ const searchBox = document.querySelector('.search-users');
 let currentUser;
 let usersInDatabase = [];
 let usersWithWorkouts = [];
-let userTotals = [];
+let userTotals = {};
 let currentUsersFriends = [];
 const allUsersBtn = document.querySelector('.all-users-btn');
 const friendsBtn = document.querySelector('.friends-btn');
@@ -49,7 +49,6 @@ logoutBtn.addEventListener('click', e => {
 ///////////////////////////
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
-
     // Show Navigation on login
     navigation.style.display = 'flex';
 
@@ -176,7 +175,8 @@ function fetchUserTotals() {
       if (child.val().lifting != undefined) {
         userTotalData.lifting = child.val().lifting.total;
       }
-      userTotals.push(userTotalData);
+      //userTotals.push(userTotalData);
+      userTotals[child.key] = userTotalData;
     });
   });
 
@@ -207,86 +207,87 @@ function generateUserHTML() {
     } else {
       userBox.innerHTML +=
       `
-        <p class="user-name">${userTotals[i].user}</p>
+        <p class="user-name">${usersInDatabase[i]}</p>
         <div class="add-friend"></div>
         
       `;
       // Checks to see if the user has completed any running workouts
       // If not, sets the running total to 0
-      if (userTotals[i].running != undefined) {
-        userWorkoutsList.innerHTML += 
-        `
-          <div class="user-workout">
-            <p class="workout-emoji">🏃</p>
-            <p class="user-workout-total"> ${userTotals[i].running} miles</p>
-          </div>
-        `;
-      } else {
-        userWorkoutsList.innerHTML +=
-        `
-          <div class="user-workout">
-            <p class="workout-emoji">🏃</p>
-            <p class="user-workout-total">0 miles</p>
-          </div>
-        `
-      }
-      // Checks to see if the user has completed any walking workouts
-      // If not, sets the walking total to 0
-      if (userTotals[i].walking != undefined) {
-        userWorkoutsList.innerHTML += 
-        `
-          <div class="user-workout">
-            <p class="workout-emoji">🚶‍</p>
-            <p class="user-workout-total">${userTotals[i].walking} miles</p>
-          </div>
-        `;
-      } else {
-        userWorkoutsList.innerHTML +=
-        `
-          <div class="user-workout">
-            <p class="workout-emoji">🚶‍</p>
-            <p class="user-workout-total">0 miles</p>
-          </div>
-        `
-      }
-      // Checks to see if the user has completed any biking workouts
-      // If not, sets the biking total to 0
-      if (userTotals[i].biking != undefined) {
-        userWorkoutsList.innerHTML += 
-        `
-          <div class="user-workout">
-            <p class="workout-emoji">🚴‍</p>
-            <p class="user-workout-total">‍‍‍‍${userTotals[i].biking} miles</p>
-          </div>
-        `;
-      } else {
-        userWorkoutsList.innerHTML +=
-        `
-          <div class="user-workout">
-            <p class="workout-emoji">🚴‍</p>
-            <p class="user-workout-total">‍‍‍‍0 miles</p>
-          </div>
-        `
-      }
-      // Checks to see if the user has completed any lifting workouts
-      // If not, sets the lifting total to 0
-      if (userTotals[i].lifting != undefined) {
-        userWorkoutsList.innerHTML += 
-        `
-          <div class="user-workout">
-            <p class="workout-emoji">🏋️‍</p>
-            <p class="user-workout-total">${userTotals[i].lifting} minutes</p>
-          </div>
-        `;
-      } else {
-        userWorkoutsList.innerHTML +=
-        `
-          <div class="user-workout">
-            <p class="workout-emoji">🏋️‍</p>
-            <p class="user-workout-total">0 minutes</p>
-          </div>
-        `;
-      }
+        if (userTotals[usersInDatabase[i]].running != undefined) {
+          userWorkoutsList.innerHTML += 
+          `
+            <div class="user-workout">
+              <p class="workout-emoji">🏃</p>
+              <p class="user-workout-total"> ${userTotals[usersInDatabase[i]].running} miles</p>
+            </div>
+          `;
+        } else {
+          userWorkoutsList.innerHTML +=
+          `
+            <div class="user-workout">
+              <p class="workout-emoji">🏃</p>
+              <p class="user-workout-total">0 miles</p>
+            </div>
+          `
+        }
+        // Checks to see if the user has completed any walking workouts
+        // If not, sets the walking total to 0
+        if (userTotals[usersInDatabase[i]].walking != undefined) {
+          userWorkoutsList.innerHTML += 
+          `
+            <div class="user-workout">
+              <p class="workout-emoji">🚶‍</p>
+              <p class="user-workout-total">${userTotals[usersInDatabase[i]].walking} miles</p>
+            </div>
+          `;
+        } else {
+          userWorkoutsList.innerHTML +=
+          `
+            <div class="user-workout">
+              <p class="workout-emoji">🚶‍</p>
+              <p class="user-workout-total">0 miles</p>
+            </div>
+          `
+        }
+        // Checks to see if the user has completed any biking workouts
+        // If not, sets the biking total to 0
+        if (userTotals[usersInDatabase[i]].biking != undefined) {
+          userWorkoutsList.innerHTML += 
+          `
+            <div class="user-workout">
+              <p class="workout-emoji">🚴‍</p>
+              <p class="user-workout-total">‍‍‍‍${userTotals[usersInDatabase[i]].biking} miles</p>
+            </div>
+          `;
+        } else {
+          userWorkoutsList.innerHTML +=
+          `
+            <div class="user-workout">
+              <p class="workout-emoji">🚴‍</p>
+              <p class="user-workout-total">‍‍‍‍0 miles</p>
+            </div>
+          `
+        }
+        // Checks to see if the user has completed any lifting workouts
+        // If not, sets the lifting total to 0
+        if (userTotals[usersInDatabase[i]].lifting != undefined) {
+          userWorkoutsList.innerHTML += 
+          `
+            <div class="user-workout">
+              <p class="workout-emoji">🏋️‍</p>
+              <p class="user-workout-total">${userTotals[usersInDatabase[i]].lifting} minutes</p>
+            </div>
+          `;
+        } else {
+          userWorkoutsList.innerHTML +=
+          `
+            <div class="user-workout">
+              <p class="workout-emoji">🏋️‍</p>
+              <p class="user-workout-total">0 minutes</p>
+            </div>
+          `;
+        }
+
 
     }
     userBox.appendChild(userWorkoutsList);
