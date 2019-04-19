@@ -307,7 +307,7 @@ function generateFriendsHTML() {
     userWorkoutsList.className = 'user-workouts';
     userBox.id = `${i}`;
     // What happens if the user's friend doesn't have any workouts logged
-    if (userTotals[i] == undefined) {
+    if (userTotals[usersInDatabase[i]] == undefined) {
       if (usersWithWorkouts.indexOf(usersInDatabase[i]) == -1 && currentUsersFriends.indexOf(usersInDatabase[i]) > -1) {
         userBox.innerHTML += 
         `
@@ -317,21 +317,21 @@ function generateFriendsHTML() {
       }
       
       // Checks to see if the users in the usersTotals array are in the current users friends array
-    } else if (currentUsersFriends.indexOf(userTotals[i].user) > -1 || userTotals[i].user == currentUser) {
+    } else if (currentUsersFriends.indexOf(userTotals[usersInDatabase[i]].user) > -1 || userTotals[usersInDatabase[i]].user == currentUser) {
         userBox.innerHTML +=
         `
-          <p class="user-name">${userTotals[i].user}</p>
+          <p class="user-name">${userTotals[usersInDatabase[i]].user}</p>
           <div class="add-friend"></div>
           
         `;
         // Checks to see if the user has completed any running workouts
         // If not, sets the running total to 0
-        if (userTotals[i].running != undefined) {
+        if (userTotals[usersInDatabase[i]].running != undefined) {
           userWorkoutsList.innerHTML += 
           `
             <div class="user-workout">
               <p class="workout-emoji">🏃</p>
-              <p class="user-workout-total"> ${userTotals[i].running} miles</p>
+              <p class="user-workout-total"> ${userTotals[usersInDatabase[i]].running} miles</p>
             </div>
           `;
         } else {
@@ -345,12 +345,12 @@ function generateFriendsHTML() {
         }
         // Checks to see if the user has completed any walking workouts
         // If not, sets the walking total to 0
-        if (userTotals[i].walking != undefined) {
+        if (userTotals[usersInDatabase[i]].walking != undefined) {
           userWorkoutsList.innerHTML += 
           `
             <div class="user-workout">
               <p class="workout-emoji">🚶‍</p>
-              <p class="user-workout-total">${userTotals[i].walking} miles</p>
+              <p class="user-workout-total">${userTotals[usersInDatabase[i]].walking} miles</p>
             </div>
           `;
         } else {
@@ -364,12 +364,12 @@ function generateFriendsHTML() {
         }
         // Checks to see if the user has completed any biking workouts
         // If not, sets the biking total to 0
-        if (userTotals[i].biking != undefined) {
+        if (userTotals[usersInDatabase[i]].biking != undefined) {
           userWorkoutsList.innerHTML += 
           `
             <div class="user-workout">
               <p class="workout-emoji">🚴‍</p>
-              <p class="user-workout-total">‍‍‍‍${userTotals[i].biking} miles</p>
+              <p class="user-workout-total">‍‍‍‍${userTotals[usersInDatabase[i]].biking} miles</p>
             </div>
           `;
         } else {
@@ -383,12 +383,12 @@ function generateFriendsHTML() {
         }
         // Checks to see if the user has completed any lifting workouts
         // If not, sets the lifting total to 0
-        if (userTotals[i].lifting != undefined) {
+        if (userTotals[usersInDatabase[i]].lifting != undefined) {
           userWorkoutsList.innerHTML += 
           `
             <div class="user-workout">
               <p class="workout-emoji">🏋️‍</p>
-              <p class="user-workout-total">${userTotals[i].lifting} minutes</p>
+              <p class="user-workout-total">${userTotals[usersInDatabase[i]].lifting} minutes</p>
             </div>
           `;
         } else {
