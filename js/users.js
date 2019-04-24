@@ -59,7 +59,7 @@ firebase.auth().onAuthStateChanged((user) => {
     // If there is, splits the string and then joins them without the period
     if (userEmailName.indexOf(period) > -1) {
       currentUser = userEmailName.split(".");
-      currentUser = formattedUserName[0] + formattedUserName[1];
+      currentUser = currentUser[0] + currentUser[1];
     // If there is not period in a user's username
     // Creates the user's username from the beginning of their email
     } else {
